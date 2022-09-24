@@ -1,0 +1,10 @@
+.navbar__element_type_button {
+  padding-left: 24px;
+  background-color: transparent;
+}
+
+@media screen and (max-width:768px) {
+  .navbar__element_type_button {
+    padding-left: 0;
+  }
+}

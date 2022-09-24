@@ -1,0 +1,13 @@
+.popup__title_reg-status {
+  width: 358px;
+  margin: 0;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+
+@media screen and (max-width:570px) {
+.popup__title_reg-status {
+  width: 244px;
+}
+}
