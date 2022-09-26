@@ -142,6 +142,14 @@ const getMyInfo = async (req, res, next) => {
   }
 };
 
+const signOut = async (req, res, next) => {
+  try {
+    return await res.clearCookie('jwt').send({ message: 'Куки очищены' });
+  } catch (e) {
+    return next(e);
+  }
+};
+
 module.exports = {
   createUser,
   getUsers,
@@ -150,4 +158,5 @@ module.exports = {
   updateUserAvatarById,
   login,
   getMyInfo,
+  signOut,
 };

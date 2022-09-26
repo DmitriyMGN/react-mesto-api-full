@@ -11,6 +11,7 @@ const {
   updateUserInfoById,
   updateUserAvatarById,
   getMyInfo,
+  signOut,
 } = require('../controllers/users');
 const {
   createCard,
@@ -22,6 +23,7 @@ const {
 
 userRoutes.get('/users', express.json(), getUsers);
 userRoutes.get('/users/me', express.json(), getMyInfo);
+userRoutes.get('/signout', express.json(), signOut);
 userRoutes.get(
   '/users/:userId',
   express.json(),

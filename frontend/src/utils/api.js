@@ -21,10 +21,10 @@ class Api {
       credentials: 'include'
     }).then(this._checkResponse);
   }
+  
 setUserInfo(item) {
   return fetch(`${this._url}/users/me`, {
-    credentials: 'include'
-  }, {
+    credentials: 'include',
     method: "PATCH",
     body: JSON.stringify({
       name: item.name,
@@ -34,9 +34,8 @@ setUserInfo(item) {
 }
 
   setNewCard(item) {
-    return fetch(`${this._url}/cards`, {
-      credentials: 'include'
-    }, {
+    return fetch(`${this._url}/cards`,{
+      credentials: 'include',
       method: "POST",
       body: JSON.stringify({
         name: item.name,
@@ -46,25 +45,22 @@ setUserInfo(item) {
   }
 
   deleteCard(cardId) {
-    return fetch(`${this._url}/cards/${cardId}`,{
-      credentials: 'include'
-    }, {
+    return fetch(`${this._url}/cards/${cardId}`, {
+      credentials: 'include',
       method: "DELETE",
     }).then(this._checkResponse);
   }
 
   changeLikeCardStatus(cardId, like) {
     return fetch(`${this._url}/cards/${cardId}/likes`,{
-      credentials: 'include'
-    }, {
+      credentials: 'include',
       method: like ? "PUT" : "DELETE",
     }).then(this._checkResponse);
   }
 
   updateAvatar(item) {
     return fetch(`${this._url}/users/me/avatar`, {
-      credentials: 'include'
-    }, {
+      credentials: 'include',
       method: "PATCH",
       body: JSON.stringify({
         avatar: item.avatar,

@@ -1,6 +1,6 @@
 {
-  "homepage": "https://dmitriymgn.github.io/react-mesto-auth/",
-  "name": "react-mesto-auth",
+  "homepage": "https://dmitriymgn.github.io/react-mesto-api-full/",
+  "name": "react-mesto-api-full",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

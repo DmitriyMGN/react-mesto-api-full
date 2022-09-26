@@ -1,6 +1,6 @@
 import baseUrl from "./utils.js"
 class Auth {
-  
+
   _checkResponse(res) {
     if (res.ok) {
       return res.json();
@@ -10,6 +10,7 @@ class Auth {
 
   register(password, email) {
     return fetch(`${baseUrl}/signup`, {
+        credentials: 'include',
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -24,6 +25,7 @@ class Auth {
 
   authorize(password, email) {
     return fetch(`${baseUrl}/signin`, {
+        credentials: 'include',
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -36,6 +38,12 @@ class Auth {
       .then(this._checkResponse)
   }
 
+  signOut() {
+    return fetch(`${baseUrl}/signout`, {
+      credentials: 'include',
+      method: 'GET',
+    }).then((this._checkResponse));
+  }
 }
 
-export default Auth  
+export default Auth

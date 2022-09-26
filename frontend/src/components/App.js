@@ -50,8 +50,6 @@ function App() {
       .authorize(password, email)
       .then(() => {
           console.log("Нажата кнопка логина")
-          setEmail("");
-          setPassword("");
           setLoggedIn(true)
       })
       .catch((err) => console.log(err));
@@ -100,6 +98,7 @@ function App() {
       api
         .getInitialCards()
         .then((cardsArray) => {
+          console.log("Карточки")
           setCards(cardsArray);
         })
         .catch((err) => console.log(err));
@@ -136,7 +135,7 @@ function App() {
   }
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some((i) => i._id === currentUser._id);
+    const isLiked = card.likes.some((i) => i === currentUser._id);
 
     api
       .changeLikeCardStatus(card._id, !isLiked)
@@ -200,8 +199,12 @@ function App() {
   }
 
   function signOut() {
-    localStorage.removeItem("jwt");
-    history.push("/sign-in");
+    auth.signOut()
+    .then(() => {
+        setLoggedIn(false)
+        history.push("/sign-in");
+    })
+    .catch((err) => console.log(err));
   }
 
   return (
