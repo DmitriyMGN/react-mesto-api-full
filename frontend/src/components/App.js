@@ -64,6 +64,7 @@ function App() {
       .then(() => {
         handleLogin();
         handleInfoToolTip();
+        history.push("/");
       })
       .catch(() => {
         setLoggedIn(false);
@@ -87,7 +88,6 @@ function App() {
         setCurrentUser(userData);
         setLoggedIn(true);
         setLoggedEmail(userData.email);
-        console.log("Редирект")
         history.push("/");
       })
       .catch((err) => console.log(err));

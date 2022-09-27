@@ -26,6 +26,9 @@ setUserInfo(item) {
   return fetch(`${this._url}/users/me`, {
     credentials: 'include',
     method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify({
       name: item.name,
       about: item.about,
@@ -37,6 +40,9 @@ setUserInfo(item) {
     return fetch(`${this._url}/cards`,{
       credentials: 'include',
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({
         name: item.name,
         link: item.link,
@@ -62,6 +68,9 @@ setUserInfo(item) {
     return fetch(`${this._url}/users/me/avatar`, {
       credentials: 'include',
       method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({
         avatar: item.avatar,
       }),

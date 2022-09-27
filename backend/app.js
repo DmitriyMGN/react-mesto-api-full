@@ -8,6 +8,7 @@ const { userRoutes, cardRoutes } = require('./routes/index');
 const { createUser, login } = require('./controllers/users');
 const { auth } = require('./middlewares/auth');
 const { NotFoundError } = require('./errors/NotFoundError');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const { PORT = 4000 } = process.env;
 
@@ -21,6 +22,8 @@ app.use(
     credentials: true,
   }),
 );
+
+app.use(requestLogger);
 
 app.post(
   '/signin',
@@ -56,6 +59,8 @@ app.use((req, res, next) => {
     return next();
   }
 });
+
+app.use(errorLogger);
 
 app.use(errors());
 
