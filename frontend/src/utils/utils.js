@@ -1,3 +1,3 @@
-const baseUrl = 'http://localhost:4000'
+const baseUrl = 'http://api.dmitriymgn.nomorepartiesxyz.ru'
 
 export default baseUrl

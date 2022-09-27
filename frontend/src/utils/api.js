@@ -78,4 +78,4 @@ setUserInfo(item) {
   }
 }
 
-export default new Api("http://localhost:4000");
+export default new Api("http://api.dmitriymgn.nomorepartiesxyz.ru");
