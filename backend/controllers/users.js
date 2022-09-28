@@ -6,6 +6,8 @@ const { NotFoundError } = require('../errors/NotFoundError');
 const { BadRequestError } = require('../errors/BadRequestError');
 const { ConflictError } = require('../errors/ConflictError');
 
+const { NODE_ENV, JWT_SECRET } = process.env;
+
 const createUser = async (req, res, next) => {
   const {
     name,
@@ -117,7 +119,7 @@ const login = async (req, res, next) => {
 
     const isUserValid = await bcrypt.compare(password, user.password);
     if (isUserValid) {
-      const token = jwt.sign({ _id: user._id }, 'SECRET');
+      const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret');
       res.cookie('jwt', token, {
         maxAge: 3600000 * 24 * 7,
         httpOnly: true,
