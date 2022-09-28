@@ -10,6 +10,6 @@
 
 IP-адрес 84.252.129.57
 
-Frontend https://dmitriymgn.nomorepartiesxyz.ru
+Frontend https://dmitriymgn.nomoredomains.club/
 
-Backend https://api.dmitriymgn.nomorepartiesxyz.ru
+Backend https://api.dmitriymgn.nomoredomains.club/

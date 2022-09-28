@@ -1,3 +1,3 @@
-const baseUrl = 'http://api.dmitriymgn.nomorepartiesxyz.ru'
+const baseUrl = 'http://api.dmitriymgn.nomoredomains.club'
 
 export default baseUrl
