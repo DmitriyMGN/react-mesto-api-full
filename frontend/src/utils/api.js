@@ -78,4 +78,4 @@ setUserInfo(item) {
   }
 }
 
-export default new Api("http://api.dmitriymgn.nomoredomains.club");
+export default new Api("https://api.dmitriymgn.nomoredomains.club");

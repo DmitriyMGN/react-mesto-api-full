@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: 'http://dmitriymgn.nomoredomains.club/',
+    origin: 'https://dmitriymgn.nomoredomains.club/',
     credentials: true,
   }),
 );
