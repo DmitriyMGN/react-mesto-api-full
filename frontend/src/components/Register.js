@@ -25,7 +25,7 @@ function Register(props) {
       </form>
       <NavLink
         className="navbar__element navbar__element_type_register"
-        to="/sign-in"
+        to="/signin"
       >
         Уже зарегистрированы? Войти
       </NavLink>
