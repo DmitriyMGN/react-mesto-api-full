@@ -212,7 +212,7 @@ function App() {
       <div className="page">
         <Header signOut={signOut} email={loggedEmail} />
         <Switch>
-          <Route path="/sign-in">
+          <Route path="/signin">
             <Login
               onLogin={handleSubmitLogin}
               email={email}
@@ -221,7 +221,7 @@ function App() {
               handleChangePassword={handleChangePassword}
             />
           </Route>
-          <Route path="/sign-up">
+          <Route path="/signup">
             <Register
               onRegister={handleSubmitRegister}
               email={email}
