@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: 'http://dmitriymgn.nomorepartiesxyz.ru',
+    origin: 'http://dmitriymgn.nomoredomains.club/',
     credentials: true,
   }),
 );
