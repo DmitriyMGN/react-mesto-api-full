@@ -8,7 +8,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 84.252.129.57
+IP 84.252.129.57
 
 Frontend https://dmitriymgn.nomoredomains.club/
 
