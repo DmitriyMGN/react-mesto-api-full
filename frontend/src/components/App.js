@@ -49,6 +49,7 @@ function App() {
     auth
       .authorize(password, email)
       .then(() => {
+          history.go('/');
           setLoggedIn(true)
       })
       .catch((err) => console.log(err));
@@ -61,7 +62,6 @@ function App() {
     auth
       .register(password, email)
       .then(() => {
-        history.go("/");
         handleLogin();
         handleInfoToolTip();
       })
