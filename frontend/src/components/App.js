@@ -61,6 +61,7 @@ function App() {
     auth
       .register(password, email)
       .then(() => {
+        handleLogin();
         handleInfoToolTip();
       })
       .catch(() => {
@@ -79,13 +80,15 @@ function App() {
   }
 
   useEffect(() => {
+    if (loggedIn) {
+      history.push('/');
+    }
     api
       .getUserInfo()
       .then((userData) => {
         setCurrentUser(userData);
         setLoggedIn(true);
         setLoggedEmail(userData.email);
-        history.push("/");
       })
       .catch((err) => console.log(err));
   }, [loggedIn, history])
