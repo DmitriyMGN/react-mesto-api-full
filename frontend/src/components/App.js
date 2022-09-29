@@ -79,20 +79,17 @@ function App() {
     };
     return data;
   }
-
-  useEffect(() => {
-    if (loggedIn) {
-      api
-        .getUserInfo()
-        .then((userData) => {
-          setCurrentUser(userData);
-          setLoggedIn(true);
-          setLoggedEmail(userData.email);
-          history.push("/");
-        })
-        .catch((err) => console.log(err));
-    }
-  }, [loggedIn, history])
+useEffect(() => {
+  api
+    .getUserInfo()
+    .then((userData) => {
+      setCurrentUser(userData);
+      setLoggedIn(true);
+      setLoggedEmail(userData.email);
+      history.push("/");
+    })
+    .catch((err) => console.log(err));
+}, [loggedIn, history])
 
   useEffect(() => {
     if (loggedIn) {
