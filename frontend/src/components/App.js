@@ -63,7 +63,6 @@ function App() {
       .then(() => {
         handleLogin();
         handleInfoToolTip();
-        history.push("/");
       })
       .catch(() => {
         setLoggedIn(false);
