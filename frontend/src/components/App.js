@@ -50,6 +50,7 @@ function App() {
       .authorize(password, email)
       .then(() => {
           setLoggedIn(true)
+          history.push("/");
       })
       .catch((err) => console.log(err));
   }
@@ -80,15 +81,13 @@ function App() {
   }
 
   useEffect(() => {
-    if (loggedIn) {
-      history.push('/');
-    }
     api
       .getUserInfo()
       .then((userData) => {
         setCurrentUser(userData);
         setLoggedIn(true);
         setLoggedEmail(userData.email);
+        history.push("/");
       })
       .catch((err) => console.log(err));
   }, [loggedIn, history])
