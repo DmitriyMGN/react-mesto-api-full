@@ -50,7 +50,6 @@ function App() {
       .authorize(password, email)
       .then(() => {
           setLoggedIn(true)
-          history.push("/");
       })
       .catch((err) => console.log(err));
   }
@@ -64,6 +63,7 @@ function App() {
       .then(() => {
         handleLogin();
         handleInfoToolTip();
+        history.go('/signin')
       })
       .catch(() => {
         setLoggedIn(false);
