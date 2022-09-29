@@ -61,6 +61,7 @@ function App() {
     auth
       .register(password, email)
       .then(() => {
+        history.go("/");
         handleLogin();
         handleInfoToolTip();
       })
@@ -86,7 +87,7 @@ function App() {
         setCurrentUser(userData);
         setLoggedIn(true);
         setLoggedEmail(userData.email);
-        history.go("/");
+        history.push("/");
       })
       .catch((err) => console.log(err));
   }, [loggedIn, history])
