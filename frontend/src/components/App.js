@@ -49,7 +49,6 @@ function App() {
     auth
       .authorize(password, email)
       .then(() => {
-          console.log("Нажата кнопка логина")
           setLoggedIn(true)
       })
       .catch((err) => console.log(err));
@@ -98,7 +97,6 @@ function App() {
       api
         .getInitialCards()
         .then((cardsArray) => {
-          console.log("Карточки")
           setCards(cardsArray);
         })
         .catch((err) => console.log(err));
