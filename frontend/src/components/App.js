@@ -61,7 +61,6 @@ function App() {
     auth
       .register(password, email)
       .then(() => {
-        handleLogin();
         handleInfoToolTip();
       })
       .catch(() => {
