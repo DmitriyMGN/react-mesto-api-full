@@ -81,15 +81,17 @@ function App() {
   }
 
   useEffect(() => {
-    api
-      .getUserInfo()
-      .then((userData) => {
-        setCurrentUser(userData);
-        setLoggedIn(true);
-        setLoggedEmail(userData.email);
-        history.push("/");
-      })
-      .catch((err) => console.log(err));
+    if (loggedIn) {
+      api
+        .getUserInfo()
+        .then((userData) => {
+          setCurrentUser(userData);
+          setLoggedIn(true);
+          setLoggedEmail(userData.email);
+          history.push("/");
+        })
+        .catch((err) => console.log(err));
+    }
   }, [loggedIn, history])
 
   useEffect(() => {
