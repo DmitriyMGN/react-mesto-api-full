@@ -122,6 +122,8 @@ const login = async (req, res, next) => {
     const isUserValid = await bcrypt.compare(password, user.password);
     if (isUserValid) {
       const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret');
+      console.log(NODE_ENV);
+      console.log(JWT_SECRET);
       res.cookie('jwt', token, {
         maxAge: 3600000 * 24 * 7,
         httpOnly: true,
